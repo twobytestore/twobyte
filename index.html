@@ -1,12 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TwoByte — Intelligent Solutions</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwoByte – Intelligent Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <header class="bg-gray-800 p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">TwoByte</h1>
+    <nav class="space-x-4">
+      <a href="#solutions">Solutions</a>
+      <a href="#industries">Industries</a>
+      <a href="#how">How it works</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section class="px-6 py-12">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Intelligent Solutions — Anytime. Anywhere. <span class="text-green-400">Always Ready.</span></h2>
+    <p class="mb-6 max-w-2xl">TwoByte deploys AI‑powered Micromart™ smart stores that turn under‑used corners into 24/7 revenue—no staff required. We install, stock and maintain.</p>
+    <div class="space-x-4">
+      <a href="#contact" class="bg-green-400 text-black px-4 py-2 rounded">Host a Machine</a>
+      <a href="#solutions" class="border border-white px-4 py-2 rounded">Explore Solutions</a>
+    </div>
+  </section>
+
+  <!-- Solutions with dynamic options -->
+  <section id="solutions" class="px-6 py-8 bg-gray-800">
+    <h3 class="text-3xl font-bold mb-4">Solutions</h3>
+    <p>Tap a card to reveal more details.</p>
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+      <!-- Card 1 -->
+      <div class="border border-white/20 rounded p-4 cursor-pointer" onclick="toggleDetails(0)">
+        <h4 class="text-xl font-semibold">Smart Fridge 🥤</h4>
+        <p>Refrigerated beverages, meals and fresh items.</p>
+        <ul id="details-0" class="hidden mt-2 space-y-1 text-sm text-gray-400">
+          <li>Best for offices, gyms, residential lobbies</li>
+          <li>Remote temperature & stock alerts</li>
+          <li>High capacity, sleek footprint</li>
+        </ul>
+      </div>
+      <!-- Card 2 -->
+      <div class="border border-white/20 rounded p-4 cursor-pointer" onclick="toggleDetails(1)">
+        <h4 class="text-xl font-semibold">Smart Pantry 🧃</h4>
+        <p>Ambient snacks, hygiene and tech accessories.</p>
+        <ul id="details-1" class="hidden mt-2 space-y-1 text-sm text-gray-400">
+          <li>Perfect for nightlife & workplaces</li>
+          <li>Curated, data‑driven mix</li>
+          <li>Modular, brandable panels</li>
+        </ul>
+      </div>
+      <!-- Card 3 -->
+      <div class="border border-white/20 rounded p-4 cursor-pointer" onclick="toggleDetails(2)">
+        <h4 class="text-xl font-semibold">Smart Freezer 🍦</h4>
+        <p>Ice cream and frozen meals (optional).</p>
+        <ul id="details-2" class="hidden mt-2 space-y-1 text-sm text-gray-400">
+          <li>Add‑on where demand fits</li>
+          <li>Great for hotels & campuses</li>
+          <li>Boost AOV with premium items</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries section (unchanged) -->
+  <section id="industries" class="px-6 py-8">
+    <h3 class="text-3xl font-bold mb-4">Who we serve</h3>
+    <p>From nightlife to offices, gyms and residential—TwoByte boosts convenience and passive revenue.</p>
+    <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+      <li>🌙 Nightlife (Bars & Clubs)</li>
+      <li>💼 Offices & Coworking</li>
+      <li>🏋️ Gyms & Fitness</li>
+      <li>🏨 Hotels & Hospitality</li>
+      <li>🏠 Residential</li>
+      <li>🎓 Schools & Campuses</li>
+    </ul>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="px-6 py-8 bg-gray-800">
+    <h3 class="text-3xl font-bold mb-4">How it works</h3>
+    <ol class="list-decimal pl-6 space-y-2">
+      <li><strong>Site survey:</strong> confirm power, placement & product mix.</li>
+      <li><strong>Install & brand:</strong> delivery, setup & custom wraps.</li>
+      <li><strong>Stock & launch:</strong> signage, curated inventory & launch promo.</li>
+      <li><strong>Operate & optimize:</strong> restocking, cleaning & data insights.</li>
+    </ol>
+  </section>
+
+  <!-- Machine images carousel -->
+  <section class="px-6 py-8">
+    <h3 class="text-3xl font-bold mb-4">Smart machines gallery</h3>
+    <div class="relative w-full max-w-lg mx-auto">
+      <img id="carousel" class="rounded-lg w-full h-80 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Mida_Food_Vending_Machine.png" alt="Mida Food Vending Machine">
+    </div>
+  </section>
+
+  <!-- Amenities & benefits -->
+  <section id="amenities" class="px-6 py-8 bg-gray-800">
+    <h3 class="text-3xl font-bold mb-4">Venue amenities & benefits</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Amenities you gain</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li>24/7 grab‑and‑go food, drinks and essentials</li>
+          <li>Cashless, modern experience your guests expect</li>
+          <li>Sleek, brandable hardware that complements your space</li>
+          <li><strong>Marketing/merchandising:</strong> use machine panels to display your own ads or product promos</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-semibold mb-2">What we handle</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li>Sourcing Micromart™ hardware & branding</li>
+          <li>Maintenance, cleaning and remote monitoring</li>
+          <li>Inventory planning, restocking routes & sales insights</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 py-8">
+    <h3 class="text-3xl font-bold mb-4">FAQ</h3>
+    <details class="mb-2"><summary>What does it cost to host?</summary><p>There’s no upfront cost. Hosting is a full‑service amenity; details are finalized with you during setup.</p></details>
+    <details class="mb-2"><summary>Who handles stocking and maintenance?</summary><p>TwoByte handles end‑to‑end setup, restocking, cleaning and support.</p></details>
+    <details class="mb-2"><summary>What do customers buy?</summary><p>We tailor the mix per venue—snacks, drinks, wellness, hygiene, tech accessories and fresh options.</p></details>
+    <details class="mb-2"><summary>How big is the footprint?</summary><p>Approximately a standard fridge footprint (≈30″ + clearance):contentReference[oaicite:0]{index=0}; we confirm power and placement during the site survey.</p></details>
+    <details class="mb-2"><summary>Where do you operate?</summary><p>We launch in the Chicago metro area and expand based on demand.</p></details>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 py-8 bg-gray-800">
+    <h3 class="text-3xl font-bold mb-4">Host a TwoByte machine</h3>
+    <p class="mb-4">Tell us about your space and foot traffic. We’ll confirm fit and schedule delivery.</p>
+    <p class="mb-4">
+      <strong>Email:</strong> <a href="mailto:info@twobytestore.com">info@twobytestore.com</a><br>
+      <strong>Address:</strong> TwoByte LLC, <em>YOUR ADDRESS HERE</em>, Chicago, IL<br>
+      <!-- Removed phone number -->
+    </p>
+    <form class="space-y-4 max-w-md">
+      <input class="w-full p-2 bg-gray-700 rounded" type="text" placeholder="Your name" required>
+      <input class="w-full p-2 bg-gray-700 rounded" type="email" placeholder="Email" required>
+      <input class="w-full p-2 bg-gray-700 rounded" type="text" placeholder="Phone (optional)">
+      <input class="w-full p-2 bg-gray-700 rounded" type="text" placeholder="Business / Venue">
+      <textarea class="w-full p-2 bg-gray-700 rounded" placeholder="Location details"></textarea>
+      <button type="submit" class="bg-green-400 text-black px-4 py-2 rounded">Request install</button>
+      <p class="text-xs text-gray-400">By submitting, you agree to be contacted about TwoByte services. We respect your privacy.</p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 py-4 bg-gray-900 text-center">
+    © 2025 TwoByte LLC • Chicago, IL • info@twobytestore.com
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Toggle details within Solutions
+    function toggleDetails(i) {
+      const el = document.getElementById('details-' + i);
+      el.classList.toggle('hidden');
+    }
+    // Carousel logic
+    const images = [
+      'https://upload.wikimedia.org/wikipedia/commons/0/09/Mida_Food_Vending_Machine.png', // Mida Food Vending Machine:contentReference[oaicite:1]{index=1}
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pepsi_Vending_Machine_at_a_Walmart_store.png/500px-Pepsi_Vending_Machine_at_a_Walmart_store.png' // Pepsi vending machine:contentReference[oaicite:2]{index=2}
+    ];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % images.length;
+      document.getElementById('carousel').src = images[idx];
+    }, 5000);
+  </script>
+</body>
 </html>
